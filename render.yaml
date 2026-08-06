@@ -6,7 +6,7 @@ services:
 
   # ── 1. Main Backend API (Node/Express) ─────────────────────────────
   - type: web
-    name: worksafe-backend
+    name: worksafe-backend1
     runtime: node
     rootDir: backend
     buildCommand: npm install

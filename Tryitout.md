@@ -467,4 +467,4 @@ worksafe/
 
 ---
 
-*Document prepared for DEVTrails 2026 — Team UnderDogs. This prototype demonstrates a fully functioning end-to-end parametric insurance pipeline. All financial transactions are simulated via Razorpay Sandbox.*
+*This prototype demonstrates a fully functioning end-to-end parametric insurance pipeline. All financial transactions are simulated via Razorpay Sandbox.*

@@ -73,7 +73,7 @@ export default function StaticPage() {
 
       {/* Simple Footer */}
       <footer style={{ background: '#0F172A', padding: '32px', textAlign: 'center', color: '#64748B', fontSize: 13 }}>
-        © 2026 WorkSafe · Built at DEVTrails
+        © 2026 WorkSafe · All rights reserved
       </footer>
     </div>
   );

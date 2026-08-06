@@ -221,7 +221,7 @@ const TESTIMONIALS = [
 
 const FOOTER_COLS = [
   { title: 'Product', links: ['How It Works', 'Coverage Zones', 'Loyalty Program', 'Pricing', 'FAQ'] },
-  { title: 'Company', links: ['About WorkSafe', 'DEVTrails 2026', 'Built with Guidewire', 'Team UnderDogs', 'Careers'] },
+  { title: 'Company', links: ['About WorkSafe', 'Our Mission', 'Team', 'Careers'] },
   { title: 'Legal',   links: ['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'Grievance Redressal'] },
 ];
 
@@ -731,10 +731,10 @@ export default function Landing() {
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#6366F1', marginBottom: 14 }}>About WorkSafe</div>
               <h2 style={{ fontSize: 'clamp(24px, 2.5vw, 36px)', fontWeight: 800, color: 'white', letterSpacing: '-0.6px', lineHeight: 1.2, marginBottom: 16 }}>
-                Built at DEVTrails 2026 — for India's gig workforce
+                Built for India's gig workforce
               </h2>
               <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.75 }}>
-                WorkSafe is built by Team UnderDogs in partnership with Guidewire. Our mission: give India's 7 million gig delivery workers the financial safety net they deserve — automated, fair, and transparent.
+                WorkSafe's mission is to give India's 7 million gig delivery workers the financial safety net they deserve — automated, fair, and transparent.
               </p>
               <Link to="/signup" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 28, background: '#4F46E5', color: 'white', padding: '13px 24px', borderRadius: 9, fontSize: 14, fontWeight: 700, textDecoration: 'none', boxShadow: '0 4px 16px rgba(79,70,229,0.4)' }}>
                 Start Your Free Week <ArrowRight size={15} />
@@ -841,7 +841,7 @@ export default function Landing() {
 
         {/* Bottom */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '20px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <p style={{ fontSize: 12.5, color: '#475569' }}>© 2026 WorkSafe · Team UnderDogs · DEVTrails · Built with Guidewire</p>
+          <p style={{ fontSize: 12.5, color: '#475569' }}>© 2026 WorkSafe · All rights reserved</p>
           <div style={{ display: 'flex', gap: 20 }}>
             {['Privacy Policy', 'Terms of Use', 'Grievance Redressal'].map(l => (
               <a key={l} href="#" style={{ fontSize: 12.5, color: '#475569', textDecoration: 'none' }}>{l}</a>

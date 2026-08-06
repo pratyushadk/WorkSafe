@@ -87,7 +87,7 @@ function verificationEmailHTML(name, verifyUrl) {
           <td style="background:#F8FAFC;padding:20px 40px;border-top:1px solid #E2E8F0;text-align:center;">
             <p style="margin:0;color:#94A3B8;font-size:12px;">
               If you didn't create a WorkSafe account, you can safely ignore this email.
-              <br />© 2026 WorkSafe · DEVTrails · Built with Guidewire
+              <br />© 2026 WorkSafe · All rights reserved
             </p>
           </td>
         </tr>

@@ -78,28 +78,28 @@ export const STATIC_PAGES = {
       { type: 'p', text: 'Delivery partners are the backbone of our modern local economy, yet they bear the brunt of climate risks, traffic gridlocks, and uncompensated downtime. WorkSafe brings enterprise-grade parametric insurance logic to the individual worker level.' }
     ]
   },
-  'devtrails-2026': {
-    title: 'Born at DEVTrails 2026',
-    subtitle: 'The hackathon where it started',
+  'our-story': {
+    title: 'Our Story',
+    subtitle: 'How WorkSafe was born',
     content: [
-      { type: 'p', text: 'WorkSafe is the brainchild of Team UnderDogs, developed over an intense period during DEVTrails 2026.' },
-      { type: 'p', text: 'Faced with the challenge of solving a real-world problem using cutting-edge tech, the team chose to address the systemic lack of financial safety nets for gig workers in India, specifically leveraging the power of Guidewire\'s ecosystem.' }
+      { type: 'p', text: 'WorkSafe was built by a team of engineers, designers, and problem solvers who believe technology should serve everyone — especially those working the hardest on the frontlines of the gig economy.' },
+      { type: 'p', text: 'Faced with the challenge of solving a real-world problem using cutting-edge tech, the team chose to address the systemic lack of financial safety nets for gig workers in India.' }
     ]
   },
-  'built-with-guidewire': {
-    title: 'Powered by Guidewire',
+  'our-tech': {
+    title: 'Our Technology',
     subtitle: 'Enterprise-grade insurance infrastructure',
     content: [
-      { type: 'p', text: 'WorkSafe is proudly built on the principles and technological models inspired by Guidewire.' },
-      { type: 'p', text: 'By utilizing advanced claim settlement patterns, dynamic policy lifecycle management, and scalable cloud integrations, we ensure that millions of micro-policies can be processed and administered without friction.' }
+      { type: 'p', text: 'WorkSafe is built on advanced parametric insurance models, dynamic policy lifecycle management, and scalable cloud integrations.' },
+      { type: 'p', text: 'By combining spatial geofencing, real-time disruption scoring, and AI-powered fraud detection, we ensure that millions of micro-policies can be processed and administered without friction.' }
     ]
   },
-  'team-underdogs': {
-    title: 'Team UnderDogs',
+  'team': {
+    title: 'The Team',
     subtitle: 'The builders',
     content: [
       { type: 'p', text: 'We are a group of engineers, designers, and problem solvers who believe that technology should serve everyone — especially those working the hardest on the frontlines of the gig economy.' },
-      { type: 'p', text: 'Thank you for supporting our project at DEVTrails 2026.' }
+      { type: 'p', text: 'Our goal is to scale WorkSafe across India and become the default income safety net for every gig worker.' }
     ]
   },
   'careers': {
@@ -107,7 +107,7 @@ export const STATIC_PAGES = {
     subtitle: 'Join the mission',
     content: [
       { type: 'p', text: 'We are always looking for passionate engineers, actuaries, and ops specialists to help us scale WorkSafe across India.' },
-      { type: 'p', text: 'Currently, there are no open positions as we are finalizing our post-DEVTrails 2026 roadmap. Check back soon!' }
+      { type: 'p', text: 'Currently, there are no open positions. Check back soon!' }
     ]
   },
 

@@ -190,7 +190,7 @@ export default function VerifyEmail() {
         </div>
 
         <p className="text-center text-xs text-slate-400 mt-6">
-          © 2026 WorkSafe · DEVTrails · All rights reserved
+          © 2026 WorkSafe · All rights reserved
         </p>
       </div>
     </div>

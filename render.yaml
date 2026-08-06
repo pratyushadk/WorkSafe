@@ -57,7 +57,7 @@ services:
       - key: MOCK_PARTNER_API_SECRET
         sync: false
       - key: MOCK_PARTNER_API_URL
-        sync: false          # Set AFTER mock-api is deployed
+        value: https://worksafe-mock-api1.onrender.com
       - key: ML_SERVICE_URL
         sync: false          # Set AFTER ml-service is deployed
       - key: C_RATIO

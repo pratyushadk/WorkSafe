@@ -40,7 +40,11 @@ export default function Dashboard() {
           fetchClaims(),
           fetchZones(),
         ]);
-        if (pol.status  === 'fulfilled')  setPolicy(pol.value.data);
+        if (pol.status  === 'fulfilled') {
+          const d = pol.value.data;
+          // Response is either the policy object directly, or { policy: null } for no active policy
+          setPolicy(d?.policy === null ? null : (d?.policy_id ? d : null));
+        }
         if (cl.status   === 'fulfilled') {
           const raw = cl.value.data;
           setClaims(Array.isArray(raw) ? raw : (raw?.claims ?? []));

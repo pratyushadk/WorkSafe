@@ -29,13 +29,31 @@ router.get('/profile', async (req, res) => {
   }
 
   try {
-    const mockResponse = await axios.get(
-      `${process.env.MOCK_PARTNER_API_URL}/rider/${platform_rider_id}`,
-      {
-        headers: { 'X-Mock-Secret': process.env.MOCK_PARTNER_API_SECRET },
-        timeout: 5000,
+    let mockResponse;
+    try {
+      mockResponse = await axios.get(
+        `${process.env.MOCK_PARTNER_API_URL}/rider/${platform_rider_id}`,
+        {
+          headers: { 'X-Mock-Secret': process.env.MOCK_PARTNER_API_SECRET },
+          timeout: 10000,
+        }
+      );
+    } catch (firstErr) {
+      // If rate-limited (429), wait 3s and retry once — handles Render cold-start throttling
+      if (firstErr.response?.status === 429) {
+        console.warn(`[Onboarding] Mock API rate-limited (429), retrying in 3s...`);
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        mockResponse = await axios.get(
+          `${process.env.MOCK_PARTNER_API_URL}/rider/${platform_rider_id}`,
+          {
+            headers: { 'X-Mock-Secret': process.env.MOCK_PARTNER_API_SECRET },
+            timeout: 10000,
+          }
+        );
+      } else {
+        throw firstErr;
       }
-    );
+    }
 
     // mockResponse.data = { success: true, data: riderObject }
     // Return the rider object directly so frontend can access p.name, p.e_avg etc.
@@ -49,6 +67,7 @@ router.get('/profile', async (req, res) => {
       fallbackRequired: true,
     });
   }
+
 });
 
 // ─────────────────────────────────────────────────────────────

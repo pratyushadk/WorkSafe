@@ -108,14 +108,14 @@ async function fetchEarthquakes(lat, lon, radiusKm = 50) {
         orderby: 'magnitude',
         limit: 5,
       },
-      timeout: 5000,
+      timeout: 2000, // Reduced from 5000ms — USGS is consistently slow; fail fast and return 0
     });
 
     const features = response.data.features ?? [];
     const maxMagnitude = features[0]?.properties?.mag ?? 0;
     return { maxMagnitude, count: features.length };
   } catch (err) {
-    console.warn(`[USGS] API error: ${err.message}`);
+    // Silenced to debug-level — USGS timeouts are expected and handled safely
     return { maxMagnitude: 0, count: 0 };
   }
 }

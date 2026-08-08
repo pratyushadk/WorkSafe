@@ -34,12 +34,14 @@ async function runPollingCycle() {
     const zones = await getActiveZones();
     console.log(`[Polling] Processing ${zones.length} active zones...`);
 
-    // Process all zones concurrently (SRS FR-3.2: Promise.all)
-    await Promise.all(zones.map(async (zone) => {
+    // Process zones sequentially to avoid exhausting the Supabase connection pool.
+    // Old Promise.all across 10 zones was opening 20+ simultaneous DB connections,
+    // hitting the session pool_size limit of 15 (EMAXCONNSESSION errors).
+    for (const zone of zones) {
       try {
         const { zone_id, centroid_lat, centroid_lon } = zone;
 
-        // Fetch all data concurrently per zone
+        // Fetch external API data concurrently per zone (no extra DB connections here)
         const [weather, nasa, usgs, traffic, verifiedReports, activeRiderCount] = await Promise.all([
           fetchWeather(zone_id, centroid_lat, centroid_lon),
           fetchNasaEvents(centroid_lat, centroid_lon),
@@ -81,7 +83,7 @@ async function runPollingCycle() {
       } catch (err) {
         console.error(`[Polling] Error processing zone ${zone.zone_id}:`, err.message);
       }
-    }));
+    }
 
     const elapsed = Date.now() - startTime;
     console.log(`[Polling] Cycle complete in ${elapsed}ms (SRS NFR-1 limit: 30000ms) ${elapsed > 30000 ? '⚠️ SLOW' : '✅'}`);
